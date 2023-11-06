@@ -31,7 +31,16 @@
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the array.
     // 🧠 As you have done in the past, declare a variable before you start looping, to accumulate the result.
     function sumNumsFor(nums) {
+      let sum = 0;
+      for (let i in nums) {
+        if (nums[i] === 13) {
+          return "I'm too superstitious!";
 
+        } else if (typeof nums[i] === "number") {
+          sum = sum + nums[i]
+        }
+      }
+      return sum;
     }
 
     // 👉 CHALLENGE 2
@@ -41,7 +50,18 @@
     // ❗ Notes:
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the characters of the string.
     function stripVowels(str) {
-
+      let result = ''
+      for (let i = 0; i < str.length; i++) {
+        if (str[i] !== "a" &&
+          str[i] !== "e" &&
+          str[i] !== "i" &&
+          str[i] !== "o" &&
+          str[i] !== "u"
+        ) {
+          result = result.concat("", str[i])
+        }
+      }
+      return result;
     }
 
     // 👉 CHALLENGE 3
@@ -49,8 +69,19 @@
     // 🧠 Examples of usage:
     // sumNumsWhile([1, 2, 3]) // should return 6
     // sumNumsWhile([1, 2, 13]) // should return "I'm too superstitious!"
-    function sumNumsWhile() {
+    function sumNumsWhile(nums) {
+      let sum = 0;
+      let i = 0;
+      while (i < nums.length) {
+        if (nums[i] === 13) {
+          return "I'm too superstitious!";
+        } else if (typeof nums[i] === 'number') {
+          sum = sum + nums[i];
+        }
+        i++;
 
+      }
+      return sum;
     }
 
     // 👉 CHALLENGE 4
@@ -70,8 +101,13 @@
     // 🧠 There are many ways to solve this, but practice using a while loop.
     // 🧠 Work out using pen and paper how the round number and the lifePoints change after each round.
     // 🧠 As long as there are lifePoints, decrease lifePoints by round number, and increase round number by one.
-    function fightMonsters() {
-
+    function fightMonsters(lifePoints) {
+      let round = 1;
+      while (lifePoints > round) {
+        lifePoints = lifePoints - round;
+        round++;
+      }
+      return `You died in round ${round}`
     }
 
     // 👉 CHALLENGE 5
